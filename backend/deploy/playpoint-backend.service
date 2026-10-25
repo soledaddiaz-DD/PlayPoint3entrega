@@ -1,0 +1,27 @@
+# Servicio de systemd: deja la API de PlayPoint corriendo siempre
+# (arranca con el servidor y se reinicia sola si se cae).
+# Se copia a /etc/systemd/system/playpoint-backend.service
+
+[Unit]
+Description=PlayPoint API (Node.js)
+After=network.target mariadb.service mysqld.service
+Wants=mariadb.service mysqld.service
+
+[Service]
+Type=simple
+User=playpoint
+Group=playpoint
+WorkingDirectory=/opt/playpoint/backend
+ExecStart=/usr/bin/node src/server.js
+Restart=on-failure
+RestartSec=3
+
+# Seguridad: el servicio solo puede escribir en la carpeta de fotos
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/playpoint
+
+[Install]
+WantedBy=multi-user.target

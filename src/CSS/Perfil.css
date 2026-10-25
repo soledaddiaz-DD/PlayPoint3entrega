@@ -1,0 +1,643 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.perfil-page {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  color: #0d152c;
+  background: #f6f7fb;
+}
+
+.perfil-page a {
+  text-decoration: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+.perfil-page button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.perfil-page input,
+.perfil-page select {
+  font-family: inherit;
+}
+
+/* =====================================================
+   NAVBAR SIMPLE (solo logo)
+===================================================== */
+.perfil-page .navbar {
+  display: flex;
+  align-items: center;
+  padding: 18px 64px;
+  background: #ffffff;
+  border-bottom: 1px solid #eceef2;
+}
+
+.perfil-page .nav-brand img {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+
+/* =====================================================
+   LAYOUT
+===================================================== */
+.perfil-layout {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+  gap: 28px;
+}
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+.perfil-sidebar {
+  width: 260px;
+  flex-shrink: 0;
+
+  background: #0d152c;
+  border-radius: 18px;
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  position: sticky;
+  top: 24px;
+}
+
+.perfil-usuario {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.perfil-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ff2d60;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13.5px;
+}
+
+.perfil-usuario-nombre {
+  display: block;
+  color: #ffffff;
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+.perfil-usuario-email {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12.5px;
+  margin-top: 2px;
+}
+
+.perfil-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.perfil-nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 11px 14px;
+  border-radius: 10px;
+
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: all 0.2s ease;
+}
+
+.perfil-nav a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.perfil-nav a.active {
+  background: #ff2d60;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.perfil-logout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 11px 14px;
+  border-radius: 10px;
+
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  font-weight: 500;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 18px;
+
+  transition: color 0.2s ease;
+}
+
+.perfil-logout:hover {
+  color: #ff2d60;
+}
+
+/* =====================================================
+   CONTENIDO
+===================================================== */
+.perfil-content {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.perfil-titulo {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.perfil-card {
+  background: #ffffff;
+  border: 1px solid #eceef2;
+  border-radius: 16px;
+  padding: 24px 26px;
+  margin-bottom: 20px;
+}
+
+.perfil-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.perfil-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.perfil-card-header h3 {
+  margin-bottom: 0;
+}
+
+/* =====================================================
+   BOTONES
+===================================================== */
+.btn-outline-perfil {
+  background: #ffffff;
+  color: #0d152c;
+  border: 1px solid #d8dae3;
+  border-radius: 10px;
+  padding: 9px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-perfil:hover {
+  border-color: #ff2d60;
+  color: #ff2d60;
+}
+
+.btn-guardar-plan {
+  background: #0d152c;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 13px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-guardar-plan:hover {
+  background: #ff2d60;
+}
+
+.btn-danger {
+  background: #fdecef;
+  color: #d0263f;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.btn-danger:hover {
+  background: #fadbe0;
+}
+
+/* =====================================================
+   MI PERFIL - INFO GRID
+===================================================== */
+.perfil-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 24px;
+}
+
+.perfil-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.perfil-info-item .label {
+  font-size: 12.5px;
+  color: #8a8fa3;
+}
+
+.perfil-info-item .valor {
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.perfil-info-item input,
+.perfil-card select {
+  border: 1px solid #d8dae3;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 14px;
+  color: #0d152c;
+}
+
+.perfil-info-item input:focus,
+.perfil-card select:focus {
+  outline: none;
+  border-color: #ff2d60;
+}
+
+/* =====================================================
+   ESTADÍSTICAS
+===================================================== */
+.perfil-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.perfil-stat {
+  background: #f6f7fb;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+}
+
+.stat-valor {
+  display: block;
+  font-size: 22px;
+  font-weight: 800;
+  color: #0d152c;
+}
+
+.stat-label {
+  display: block;
+  font-size: 12.5px;
+  color: #8a8fa3;
+  margin-top: 4px;
+}
+
+/* =====================================================
+   MIS INSCRIPCIONES
+===================================================== */
+.inscripciones-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.inscripcion-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 0;
+}
+
+.inscripcion-emoji {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #f6f7fb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.inscripcion-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.inscripcion-nombre {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.inscripcion-detalle {
+  font-size: 13px;
+  color: #8a8fa3;
+  margin-top: 2px;
+}
+
+.inscripcion-estado {
+  flex-shrink: 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 30px;
+}
+
+.inscripcion-estado.activa {
+  background: #dcf5e0;
+  color: #1c7a3d;
+}
+
+.inscripcion-estado.pendiente {
+  background: #fff1d6;
+  color: #ad7500;
+}
+
+/* =====================================================
+   MIS TALLERES
+===================================================== */
+.talleres-perfil-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.taller-perfil-card {
+  margin-bottom: 0;
+}
+
+.taller-perfil-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.taller-perfil-emoji {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #f6f7fb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.taller-perfil-nombre {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.taller-perfil-profesor {
+  display: block;
+  font-size: 13px;
+  color: #8a8fa3;
+  margin-top: 2px;
+}
+
+.taller-perfil-progreso {
+  margin-bottom: 16px;
+}
+
+.progreso-barra-fondo {
+  width: 100%;
+  height: 8px;
+  background: #eceef2;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.progreso-barra-relleno {
+  height: 100%;
+  background: #ff2d60;
+  border-radius: 30px;
+}
+
+.taller-perfil-progreso span {
+  font-size: 12.5px;
+  color: #8a8fa3;
+}
+
+/* =====================================================
+   MI PLAN DEPORTIVO
+===================================================== */
+.plan-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.plan-pregunta {
+  margin-bottom: 18px;
+}
+
+.plan-pregunta span {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.plan-opciones {
+  display: flex;
+  gap: 22px;
+}
+
+.plan-opciones label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.plan-subtitulo {
+  margin-top: 8px;
+}
+
+.plan-datos-fisicos {
+  display: flex;
+  gap: 16px;
+}
+
+.plan-datos-fisicos > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.plan-datos-fisicos .label {
+  font-size: 12.5px;
+  color: #8a8fa3;
+}
+
+.plan-objetivos {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.plan-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.plan-otro {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.plan-otro .label {
+  font-size: 12.5px;
+  color: #8a8fa3;
+}
+
+.plan-grid .btn-guardar-plan {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
+
+/* =====================================================
+   CONFIGURACIÓN
+===================================================== */
+.config-item {
+  margin-bottom: 16px;
+}
+
+.config-item:last-child {
+  margin-bottom: 0;
+}
+
+.config-switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.config-switch-row input {
+  width: 18px;
+  height: 18px;
+  accent-color: #ff2d60;
+}
+
+.zona-peligro {
+  border-color: #f6d3d9;
+}
+
+.zona-peligro p {
+  font-size: 13.5px;
+  color: #3b4053;
+}
+
+/* =====================================================
+   NOTIFICACIONES
+===================================================== */
+.notificaciones-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.notificacion-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 0;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.notificacion-card.no-leida {
+  border-left: 3px solid #ff2d60;
+}
+
+.notificacion-titulo {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.notificacion-fecha {
+  font-size: 12.5px;
+  color: #8a8fa3;
+  flex-shrink: 0;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 860px) {
+  .perfil-layout {
+    flex-direction: column;
+  }
+
+  .perfil-sidebar {
+    width: 100%;
+    position: static;
+  }
+
+  .perfil-info-grid,
+  .plan-grid,
+  .perfil-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-datos-fisicos {
+    flex-direction: column;
+  }
+}

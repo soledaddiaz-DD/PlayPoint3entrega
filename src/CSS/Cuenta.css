@@ -1,0 +1,575 @@
+/* =====================================================
+   CUENTA: foto de perfil, avisos y pantalla de configuración
+   (estilos de lo agregado al conectar con el servidor)
+===================================================== */
+
+/* ---------- Avatar ---------- */
+.pp-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1;
+  user-select: none;
+}
+
+.pp-avatar-img {
+  object-fit: cover;
+  background: #eceef2;
+}
+
+/* Botón redondo de la barra superior */
+.nav-profile-link {
+  overflow: hidden;
+}
+
+.nav-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Avisos ---------- */
+.pp-alert {
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.45;
+  margin: 12px 0;
+  text-align: left;
+}
+
+.pp-alert.error {
+  background: #ffe9ee;
+  color: #c4153f;
+}
+
+.pp-alert.ok {
+  background: #dcf5e0;
+  color: #1c7a3d;
+}
+
+.pp-alert.info {
+  background: #eef2ff;
+  color: #2c3d86;
+}
+
+.pp-alert a {
+  text-decoration: underline;
+}
+
+.pp-alert .cuenta-acciones {
+  margin-top: 10px;
+}
+
+/* ---------- Botones deshabilitados (mientras se envía) ---------- */
+.submit-btn:disabled,
+.form-submit:disabled,
+.modalSubmit:disabled,
+.btn-guardar-plan:disabled,
+.btn-outline-perfil:disabled,
+.btn-primary:disabled,
+.btn-outline:disabled,
+.respuesta-enviar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---------- Formularios de login / registro ---------- */
+.field-error {
+  margin-top: 6px;
+  color: #d0263f;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.field-hint {
+  margin-top: 6px;
+  color: #9a9fab;
+  font-size: 11px;
+  text-align: left;
+}
+
+.field-hint.ok {
+  color: #1c7a3d;
+  font-weight: 600;
+}
+
+.field-hint.contador {
+  text-align: right;
+}
+
+.label-opcional {
+  color: #9a9fab;
+  font-weight: 500;
+}
+
+.input-wrapper textarea {
+  display: block;
+  width: 100%;
+  min-height: 78px;
+
+  padding: 13px 14px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #f7f8fa;
+  color: #0d152c;
+
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.5;
+
+  outline: none;
+  resize: vertical;
+  transition: 0.2s;
+}
+
+.input-wrapper textarea::placeholder {
+  color: #b7bac2;
+}
+
+.input-wrapper textarea:focus {
+  background: #f1f2f5;
+  box-shadow: 0 0 0 1px rgba(255, 45, 96, 0.4);
+}
+
+.login-content .pp-alert {
+  margin: 0 0 14px;
+  font-size: 11.5px;
+}
+
+/* ---------- Selector de foto (registro) ---------- */
+.avatar-picker {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.avatar-picker-circle {
+  width: 76px;
+  height: 76px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px dashed #d3d6de;
+  border-radius: 50%;
+  background: #f7f8fa;
+  color: #9a9fab;
+
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s;
+}
+
+.avatar-picker-circle:hover {
+  border-color: #ff2d60;
+  color: #ff2d60;
+}
+
+.avatar-picker-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-picker-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.avatar-picker-text strong {
+  font-size: 12px;
+  color: #34394a;
+}
+
+.avatar-picker-text strong span {
+  color: #9a9fab;
+  font-weight: 500;
+}
+
+.avatar-picker-text small {
+  font-size: 11px;
+  color: #9a9fab;
+}
+
+.avatar-picker-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.avatar-picker-actions button {
+  border: 1px solid #e2e4ea;
+  background: #ffffff;
+  color: #34394a;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+
+  padding: 5px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.avatar-picker-actions button:hover {
+  border-color: #ff2d60;
+  color: #ff2d60;
+}
+
+/* ---------- Barra lateral del perfil ---------- */
+.perfil-usuario-datos {
+  min-width: 0;
+}
+
+.perfil-usuario-nombre,
+.perfil-usuario-email {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+button.perfil-logout {
+  width: 100%;
+  background: none;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+  cursor: pointer;
+}
+
+/* ---------- Mi perfil ---------- */
+.perfil-cabecera {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eceef2;
+}
+
+.perfil-cabecera-usuario {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.perfil-cabecera-correo {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  color: #8a8fa3;
+}
+
+.perfil-info-ancho {
+  grid-column: 1 / -1;
+}
+
+.perfil-info-item textarea {
+  border: 1px solid #d8dae3;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #0d152c;
+  resize: vertical;
+}
+
+.perfil-info-item textarea:focus {
+  outline: none;
+  border-color: #ff2d60;
+}
+
+.valor-descripcion {
+  font-weight: 500;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.perfil-info-item input:disabled {
+  background: #f6f7fb;
+  color: #7a8092;
+  cursor: not-allowed;
+}
+
+/* ---------- Configuración ---------- */
+.cuenta-foto {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 8px;
+}
+
+.cuenta-foto-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.cuenta-foto-texto .label {
+  font-size: 12.5px;
+  color: #8a8fa3;
+}
+
+.cuenta-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cuenta-ayuda {
+  font-size: 12.5px;
+  color: #7a8092;
+  line-height: 1.5;
+}
+
+.cuenta-usuario {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid #eceef2;
+}
+
+.cuenta-fila {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.cuenta-input-prefijo {
+  display: flex;
+  align-items: center;
+  flex: 1 1 220px;
+  max-width: 340px;
+
+  border: 1px solid #d8dae3;
+  border-radius: 8px;
+  background: #ffffff;
+  padding-left: 12px;
+}
+
+.cuenta-input-prefijo:focus-within {
+  border-color: #ff2d60;
+}
+
+.cuenta-input-prefijo span {
+  color: #8a8fa3;
+  font-weight: 600;
+}
+
+.perfil-info-item .cuenta-input-prefijo input,
+.cuenta-input-prefijo input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  padding-left: 4px;
+}
+
+.perfil-info-item .cuenta-input-prefijo input:focus,
+.cuenta-input-prefijo input:focus {
+  outline: none;
+}
+
+.perfil-info-item .cuenta-input-prefijo input:disabled,
+.cuenta-input-prefijo input:disabled {
+  background: transparent;
+}
+
+.cuenta-clave {
+  margin: 18px 0;
+  padding: 18px 0;
+  border-top: 1px solid #eceef2;
+  border-bottom: 1px solid #eceef2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+}
+
+.cuenta-clave .perfil-info-item {
+  width: 100%;
+  max-width: 340px;
+}
+
+.cuenta-clave .pp-alert {
+  width: 100%;
+  max-width: 340px;
+}
+
+.cuenta-borrar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 12px;
+}
+
+.cuenta-borrar input {
+  width: 100%;
+  max-width: 340px;
+  border: 1px solid #d8dae3;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.cuenta-borrar input:focus {
+  outline: none;
+  border-color: #d0263f;
+}
+
+/* ---------- Inscripciones ---------- */
+.vacio-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+  font-size: 14px;
+}
+
+.btn-cancelar-inscripcion {
+  flex-shrink: 0;
+  background: none;
+  border: 1px solid #d8dae3;
+  border-radius: 30px;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #596071;
+  transition: all 0.2s;
+}
+
+.btn-cancelar-inscripcion:hover {
+  border-color: #d0263f;
+  color: #d0263f;
+}
+
+/* "Mis inscripciones" comparte nombres de clase con la tarjeta de inscripción de
+   Talleres.css (columna, pegajosa). Acá se restablece la fila de la lista. */
+.perfil-content .inscripcion-card {
+  position: static;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 16px;
+  width: auto;
+  padding: 24px 26px;
+  box-shadow: none;
+}
+
+.perfil-content .inscripcion-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 220px;
+  width: auto;
+  min-width: 0;
+}
+
+/* ---------- Grupos ---------- */
+.grupo-avatar-stack .av-img {
+  object-fit: cover;
+  background: #eceef2;
+}
+
+/* ---------- Reseñas ---------- */
+.review-avatar {
+  overflow: hidden;
+}
+
+.review-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.respuesta-avatar {
+  overflow: hidden;
+}
+
+.review-acciones {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-borrar-mini {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  margin-top: 14px;
+  padding: 4px 0;
+
+  background: none;
+  border: none;
+
+  color: #9a9fab;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.respuesta .btn-borrar-mini {
+  margin-top: 4px;
+}
+
+.btn-borrar-mini:hover {
+  color: #d0263f;
+}
+
+.resenas-content > .cuenta-ayuda,
+.comunidad-content > .cuenta-ayuda,
+.grupo-detalle > .cuenta-ayuda {
+  margin-bottom: 16px;
+}
+
+/* ---------- Pantallas de formulario (torneos, talleres) ---------- */
+.modalForm .pp-alert,
+.form-card .pp-alert {
+  margin: 0;
+}
+
+.form-card .cuenta-ayuda {
+  margin-bottom: -6px;
+}
+
+/* ---------- Móvil ---------- */
+@media (max-width: 600px) {
+  .avatar-picker {
+    gap: 12px;
+  }
+
+  .cuenta-foto {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .input-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}

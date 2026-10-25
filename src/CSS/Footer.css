@@ -1,0 +1,122 @@
+
+.site-footer {
+  background: linear-gradient(135deg, #0d152c 0%, #151d3a 100%);
+  color: rgba(255, 255, 255, 0.72);
+  padding: 44px 64px 0;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.footer-brand img {
+  display: block;
+  width: 76px;
+  height: 76px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+}
+
+
+.footer-brand p {
+  font-size: 13px;
+  line-height: 1.7;
+  margin-top: 16px;
+  max-width: 260px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.footer-social a {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.09);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.footer-social a:hover {
+  background: #ff2d60;
+  transform: translateY(-2px);
+}
+
+.footer-col h4 {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+  color: #fff;
+}
+
+.footer-col p {
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 700px) {
+  .site-footer {
+    padding: 36px 24px 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  
+  .footer-brand img {
+    width: 68px;
+    height: 68px;
+  }
+}

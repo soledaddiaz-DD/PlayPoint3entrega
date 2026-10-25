@@ -1,0 +1,831 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #ffffff;
+  color: #0d152c;
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   PAGINA
+===================================================== */
+
+.login-page {
+  height: 100vh;
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: 50% 50%;
+
+  background: rgba(13, 21, 44, 0.15);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* =====================================================
+   FONDO DECORATIVO (ondas a todo el ancho)
+===================================================== */
+
+.page-background {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+/* =====================================================
+   PANEL IZQUIERDO
+===================================================== */
+
+.visual-panel {
+  position: relative;
+
+  z-index: 1;
+
+  height: 100%;
+
+  background: transparent;
+}
+
+/* =====================================================
+   CAPA DE COLOR
+===================================================== */
+
+.visual-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(135deg, rgba(255, 45, 96, 0.18), transparent 35%);
+
+  z-index: 1;
+}
+
+/* =====================================================
+   ONDAS
+===================================================== */
+
+.wave {
+  position: absolute;
+
+  border-radius: 50%;
+
+  transform: rotate(-14deg);
+
+  pointer-events: none;
+}
+
+/* onda 1 */
+.wave-1 {
+  width: 130vw;
+  height: 280px;
+
+  left: -20vw;
+  top: 100px;
+
+  border-top: 16px solid rgba(255, 45, 96, 0.95);
+
+  box-shadow:
+    0 18px 0 rgba(255, 45, 96, 0.5),
+    0 36px 0 rgba(255, 45, 96, 0.25);
+
+  z-index: 2;
+}
+
+/* onda 2 */
+.wave-2 {
+  width: 160vw;
+  height: 260px;
+
+  left: -25vw;
+  top: 170px;
+
+  border-top: 10px solid rgba(255, 87, 130, 0.8);
+
+  box-shadow:
+    0 25px 0 rgba(255, 45, 96, 0.35),
+    0 50px 0 rgba(255, 45, 96, 0.18);
+
+  z-index: 2;
+}
+
+.wave-3 {
+  width: 180vw;
+  height: 270px;
+
+  left: -28vw;
+  top: 210px;
+
+  border-top: 8px solid rgba(255, 45, 96, 0.7);
+
+  box-shadow:
+    0 30px 0 rgba(255, 45, 96, 0.25),
+    0 60px 0 rgba(255, 45, 96, 0.15);
+
+  z-index: 2;
+}
+
+/* onda 4 */
+.wave-4 {
+  width: 160vw;
+  height: 290px;
+
+  left: -30vw;
+  top: 240px;
+
+  border-top: 12px solid rgba(255, 45, 96, 0.65);
+
+  box-shadow:
+    0 35px 0 rgba(255, 45, 96, 0.25),
+    0 70px 0 rgba(255, 45, 96, 0.12);
+
+  z-index: 2;
+}
+
+/* onda 5 */
+.wave-5 {
+  width: 160vw;
+  height: 300px;
+
+  left: -25vw;
+  bottom: 40px;
+
+  border-top: 8px solid rgba(255, 45, 96, 0.45);
+
+  box-shadow:
+    0 30px 0 rgba(255, 45, 96, 0.22),
+    0 60px 0 rgba(255, 45, 96, 0.1);
+
+  z-index: 2;
+}
+
+/* onda 6 */
+.wave-6 {
+  width: 130vw;
+  height: 350px;
+
+  left: -33vw;
+  bottom: -100px;
+
+  border-top: 10px solid rgba(255, 45, 96, 0.3);
+
+  box-shadow:
+    0 30px 0 rgba(255, 45, 96, 0.15),
+    0 60px 0 rgba(255, 45, 96, 0.08);
+
+  z-index: 2;
+}
+
+/* =====================================================
+   CONTENIDO PANEL IZQUIERDO
+===================================================== */
+
+.visual-content {
+  position: relative;
+
+  z-index: 5;
+
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  padding: 48px;
+}
+
+/* =====================================================
+   TEXTO INFERIOR
+===================================================== */
+
+.visual-bottom {
+  max-width: 470px;
+}
+
+.visual-bottom h1 {
+  color: #0a0a0a;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(54px, 5vw, 76px);
+
+  line-height: 0.95;
+
+  font-weight: 510;
+
+  letter-spacing: -3px;
+
+  margin-bottom: 26px;
+}
+
+.visual-bottom h1::first-line {
+  color: #050505;
+}
+
+.visual-bottom p {
+  color: rgba(7, 7, 7, 0.797);
+
+  font-size: 19px;
+
+  line-height: 1.7;
+}
+
+/* =====================================================
+   PANEL DERECHO
+===================================================== */
+
+.form-panel {
+  position: relative;
+
+  z-index: 1;
+
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: transparent;
+
+  padding: 50px;
+
+  overflow-y: auto;
+}
+
+/* =====================================================
+   CONTENIDO FORMULARIO
+===================================================== */
+
+.login-content {
+  width: 100%;
+
+  max-width: 800px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  backdrop-filter: blur(14px);
+
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 50px rgba(13, 21, 44, 0.12),
+    0 4px 12px rgba(13, 21, 44, 0.06);
+
+  padding: 36px 32px;
+}
+
+/* =====================================================
+   MARCA
+===================================================== */
+
+.top-brand {
+  display: flex;
+
+  align-items: center;
+
+  margin-bottom: 32px;
+}
+
+.brand-logo {
+  height: 50px;
+
+  width: auto;
+
+  display: block;
+}
+
+/* =====================================================
+   ENCABEZADO
+===================================================== */
+
+.form-header {
+  margin-bottom: 38px;
+
+  text-align: center;
+}
+
+.form-header h2 {
+  font-family: Georgia, "Times New Roman", serif;
+
+  color: #0d152c;
+
+  font-size: 39px;
+
+  font-weight: 500;
+
+  letter-spacing: -1.5px;
+
+  margin-bottom: 10px;
+}
+
+.form-header p {
+  color: #9a9fab;
+
+  font-size: 12px;
+}
+
+/* =====================================================
+   INPUT GROUP
+===================================================== */
+
+.input-group {
+  margin-bottom: 22px;
+}
+
+.input-group label {
+  display: block;
+
+  text-align: left;
+
+  color: #34394a;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  margin-bottom: 8px;
+}
+
+/* =====================================================
+   INPUT WRAPPER
+===================================================== */
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper input {
+  width: 100%;
+
+  height: 48px;
+
+  padding: 0 44px 0 14px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  background: #f7f8fa;
+
+  color: #0d152c;
+
+  font-size: 12px;
+
+  outline: none;
+
+  transition: 0.2s;
+}
+
+.input-wrapper input::placeholder {
+  color: #b7bac2;
+}
+
+.input-wrapper input:focus {
+  background: #f1f2f5;
+
+  box-shadow: 0 0 0 1px rgba(255, 45, 96, 0.4);
+}
+
+.input-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+
+  right: 10px;
+
+  width: 24px;
+  height: 24px;
+
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+.input-wrapper select {
+  width: 100%;
+
+  height: 48px;
+
+  padding: 0 44px 0 14px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  background: #f7f8fa;
+
+  color: #0d152c;
+
+  font-size: 12px;
+
+  outline: none;
+
+  transition: 0.2s;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  -moz-appearance: none;
+
+  cursor: pointer;
+}
+
+.input-wrapper select:focus {
+  background: #f1f2f5;
+
+  box-shadow: 0 0 0 1px rgba(255, 45, 96, 0.4);
+}
+
+/* =====================================================
+   FILA DE DOS COLUMNAS (ej: Edad + Género)
+===================================================== */
+
+.input-row {
+  display: flex;
+
+  gap: 16px;
+}
+
+.input-row .input-group {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.input-icon {
+  position: absolute;
+
+  right: 15px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #afb2ba;
+
+  pointer-events: none;
+}
+
+/* =====================================================
+   BOTÓN PASSWORD
+===================================================== */
+
+.password-btn {
+  position: absolute;
+
+  right: 13px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  border: none;
+
+  background: transparent;
+
+  color: #afb2ba;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+}
+
+/* =====================================================
+   OPCIONES
+===================================================== */
+
+.form-options {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 3px;
+
+  margin-bottom: 28px;
+
+  font-size: 10px;
+}
+
+.remember {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #3b404e;
+
+  cursor: pointer;
+}
+
+.remember input {
+  width: 12px;
+  height: 12px;
+
+  accent-color: #ff2d60;
+
+  cursor: pointer;
+}
+
+.form-options a {
+  color: #3b404e;
+
+  text-decoration: none;
+}
+
+.form-options a:hover {
+  color: #ff2d60;
+}
+
+/* =====================================================
+   BOTÓN LOGIN
+===================================================== */
+
+.submit-btn {
+  width: 75%;
+
+  margin: 0 auto;
+
+  height: 46px;
+
+  border: none;
+
+  border-radius: 25px;
+
+  background: #0d152c;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.5s;
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.submit-btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+
+  border-radius: 25px;
+
+  background-color: rgba(255, 255, 255, 0.1);
+
+  transition: all 0.3s;
+}
+
+.submit-btn:hover::before {
+  opacity: 0;
+
+  transform: scale(0.5, 0.5);
+}
+
+.submit-btn::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+
+  opacity: 0;
+
+  border-radius: 25px;
+
+  transition: all 0.3s;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  transform: scale(1.2, 1.2);
+}
+
+.submit-btn:hover::after {
+  opacity: 1;
+
+  transform: scale(1, 1);
+}
+
+/* =====================================================
+   REGISTRO - card más ancha y compacta
+===================================================== */
+
+.register-content {
+  max-width: 620px;
+}
+
+.register-content .top-brand {
+  margin-bottom: 18px;
+}
+
+.register-content .form-header {
+  margin-bottom: 20px;
+}
+
+.register-content .input-group {
+  margin-bottom: 14px;
+}
+
+.register-content .register-text {
+  margin-top: 20px;
+}
+
+.form-error {
+  color: #ff2d60;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  margin-top: -6px;
+
+  margin-bottom: 14px;
+}
+
+/* =====================================================
+   REGISTRO
+===================================================== */
+
+.register-text {
+  text-align: center;
+
+  color: #3b404e;
+
+  font-size: 10px;
+
+  margin-top: 100px;
+}
+
+.register-text a {
+  color: #0d152c;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  margin-left: 4px;
+}
+
+.register-text a:hover {
+  color: #ff2d60;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+  .login-page {
+    grid-template-columns: 45% 55%;
+  }
+
+  .visual-content {
+    padding: 35px;
+  }
+
+  .visual-bottom h1 {
+    font-size: 52px;
+  }
+
+  .form-panel {
+    padding: 35px;
+  }
+
+  .top-brand {
+    margin-bottom: 60px;
+  }
+}
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 700px) {
+  .login-page {
+    grid-template-columns: 1fr;
+
+    height: auto;
+
+    min-height: 100vh;
+
+    overflow: visible;
+  }
+
+  .visual-panel {
+    height: auto;
+
+    min-height: 360px;
+  }
+
+  .visual-content {
+    height: auto;
+
+    min-height: 360px;
+
+    padding: 30px;
+  }
+
+  .visual-bottom h1 {
+    font-size: 48px;
+
+    letter-spacing: -2px;
+  }
+
+  .visual-bottom p {
+    font-size: 12px;
+  }
+
+  .wave-1,
+  .wave-2,
+  .wave-3,
+  .wave-4,
+  .wave-5 {
+    transform: rotate(-18deg) scale(0.8);
+  }
+
+  .form-panel {
+    height: auto;
+
+    padding: 45px 25px;
+  }
+
+  .top-brand {
+    margin-bottom: 45px;
+  }
+
+  .form-header h2 {
+    font-size: 34px;
+  }
+
+  .register-text {
+    margin-top: 60px;
+  }
+
+  .input-row {
+    flex-direction: column;
+
+    gap: 0;
+  }
+}

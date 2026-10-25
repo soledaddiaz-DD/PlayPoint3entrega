@@ -1,0 +1,478 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* =====================================================
+   RESET
+===================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.membresias-page {
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    color: #0d152c;
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
+.membresias-page a {
+    text-decoration: none;
+    font-family: inherit;
+    color: inherit;
+}
+
+.membresias-page button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #ffffff;
+    border-bottom: 1px solid #f0f1f4;
+}
+
+.nav-brand img {
+    height: 42px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.nav-links a {
+    position: relative;
+    color: #0d152c;
+    font-size: 14.5px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #ff2d60;
+}
+ 
+.nav-links a.active {
+  color: #0d152c;
+  font-weight: 700;
+}
+ 
+.nav-links a.active::after {
+  content: "";
+ 
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+ 
+  width: 100%;
+  height: 2px;
+ 
+  background: #ff2d60;
+  border-radius: 2px;
+}
+ 
+.navbar .nav-profile-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+  width: 42px;
+  height: 42px;
+ 
+  background: #0d152c;
+  color: #ffffff;
+  text-decoration: none;
+ 
+  border-radius: 50%;
+ 
+  flex-shrink: 0;
+ 
+  transition: all 0.25s;
+}
+ 
+.navbar .nav-profile-btn:hover {
+  background: #ff2d60;
+  transform: translateY(-1px);
+}
+ 
+/* =====================================================
+   HEADER
+===================================================== */
+ 
+.membresias-header {
+  background: #0d152c;
+  color: #ffffff;
+ 
+  padding: 40px;
+  text-align: center;
+}
+ 
+.membresias-header h1 {
+  font-size: 30px;
+  font-weight: 800;
+}
+ 
+.membresias-header p {
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 6px;
+  font-size: 15px;
+}
+ 
+.membresias-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+ 
+/* =====================================================
+   PLANES
+===================================================== */
+ 
+.planes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 48px;
+}
+ 
+.plan-card {
+  background: #ffffff;
+  border: 1.5px solid #eceef2;
+  border-radius: 16px;
+  padding: 28px 24px;
+  position: relative;
+ 
+  display: flex;
+  flex-direction: column;
+ 
+  transition: all 0.2s;
+}
+ 
+.plan-card:hover {
+  border-color: #ffb8c8;
+  box-shadow: 0 10px 30px rgba(13, 21, 44, 0.08);
+}
+ 
+.plan-card.destacado {
+  border-color: #ff2d60;
+  box-shadow: 0 10px 34px rgba(255, 45, 96, 0.16);
+}
+ 
+.plan-badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+ 
+  background: #ff2d60;
+  color: #ffffff;
+ 
+  font-size: 11px;
+  font-weight: 700;
+ 
+  padding: 4px 16px;
+  border-radius: 20px;
+ 
+  white-space: nowrap;
+}
+ 
+.plan-nombre {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #9a9fab;
+  margin-bottom: 6px;
+}
+ 
+.plan-desc {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.55;
+  margin-bottom: 20px;
+  min-height: 40px;
+}
+ 
+.plan-precio {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0d152c;
+  line-height: 1;
+}
+ 
+.plan-precio span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #9a9fab;
+}
+ 
+.plan-beneficios {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 24px;
+  flex: 1;
+}
+ 
+.plan-beneficios li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+ 
+  font-size: 13.5px;
+  color: #3b404e;
+  padding: 5px 0;
+}
+ 
+.plan-beneficios li svg {
+  color: #ff2d60;
+  flex-shrink: 0;
+}
+ 
+.plan-card .btn-primary,
+.plan-card .btn-secondary {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+ 
+.btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+ 
+  background: #ff2d60;
+  color: #ffffff;
+ 
+  font-size: 13.5px;
+  font-weight: 600;
+ 
+  padding: 12px 22px;
+  border: none;
+  border-radius: 30px;
+ 
+  transition: all 0.25s;
+  box-shadow: 0 8px 18px rgba(255, 45, 96, 0.24);
+}
+ 
+.btn-primary:hover {
+  background: #e6244f;
+  transform: translateY(-2px);
+}
+ 
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+ 
+  background: #ffffff;
+  color: #0d152c;
+ 
+  font-size: 13.5px;
+  font-weight: 600;
+ 
+  padding: 11px 22px;
+  border: 1.5px solid #e2e4ea;
+  border-radius: 30px;
+ 
+  transition: all 0.2s;
+}
+ 
+.btn-secondary:hover {
+  border-color: #0d152c;
+}
+ 
+/* =====================================================
+   MÉTODOS DE PAGO
+===================================================== */
+ 
+.pago-section {
+  background: #f7f8fa;
+  border-radius: 16px;
+  padding: 28px;
+}
+ 
+.pago-section h2 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+ 
+.pago-metodo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+ 
+  background: #ffffff;
+  border: 1.5px solid #eceef2;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+ 
+  color: #9a9fab;
+}
+ 
+.pago-metodo.selected {
+  border-color: #ff2d60;
+  color: #ff2d60;
+}
+ 
+.pago-metodo span {
+  font-size: 14px;
+  flex: 1;
+  color: #0d152c;
+}
+ 
+.pago-metodo small {
+  color: #9a9fab;
+  font-size: 12px;
+}
+ 
+.pagar-btn {
+  margin-top: 6px;
+}
+ 
+.secure-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+ 
+  font-size: 12px;
+  color: #9a9fab;
+  margin-top: 12px;
+}
+
+.agregar-tarjeta {
+  display: inline-block;
+  margin: 6px 0 14px;
+
+  color: #ff2d60 !important;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.agregar-tarjeta:hover {
+  text-decoration: underline;
+}
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+ 
+@media (max-width: 900px) {
+  .navbar {
+    padding: 16px 32px;
+  }
+ 
+  .nav-links {
+    display: none;
+  }
+}
+ 
+@media (max-width: 700px) {
+  .planes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   SELECCIÓN DE PLAN + TARJETAS GUARDADAS
+===================================================== */
+
+.plan-card {
+  cursor: pointer;
+}
+
+.plan-card.seleccionado {
+  border-color: #ff2d60;
+  background: #fff8fa;
+  box-shadow: 0 10px 34px rgba(255, 45, 96, 0.18);
+}
+
+.plan-activo {
+  margin-left: 8px;
+  background: #e8f8ee;
+  color: #1c7a3d;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+
+.plan-card button.btn-primary,
+.plan-card button.btn-secondary {
+  width: 100%;
+  justify-content: center;
+}
+
+.pagar-btn {
+  width: 100%;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sin-tarjetas {
+  color: #9a9fab;
+  font-size: 13.5px;
+  margin-bottom: 10px;
+}
+
+.tarjeta-guardada {
+  cursor: pointer;
+}
+
+.tarjeta-guardada.selected {
+  background: #fff8fa;
+}
+
+.tarjeta-guardada span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tarjeta-titular {
+  font-style: normal;
+  font-size: 12px;
+  color: #9a9fab;
+}
+
+.tarjeta-eliminar {
+  border: none;
+  background: none;
+  color: #9a9fab;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+}
+
+.tarjeta-eliminar:hover {
+  background: #ffe9ee;
+  color: #ff2d60;
+}
+
+.pago-mensaje {
+  margin-top: 14px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #fff3d6;
+  color: #7a5a00;
+  font-size: 13.5px;
+  font-weight: 600;
+}

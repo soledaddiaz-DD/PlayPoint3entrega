@@ -1,0 +1,794 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+/* =========================================
+   PLAYPOINT - TORNEOS
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.torneosPage {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #111426;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+.header {
+  width: 100%;
+  height: 70px;
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  position: relative;
+  z-index: 10;
+}
+
+.headerContent {
+  max-width: 1180px;
+  height: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 25px;
+}
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #ffffff;
+  border-bottom: 1px solid #f0f1f4;
+}
+
+.nav-brand img {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.nav-links a {
+  position: relative;
+
+  color: #0d152c;
+
+  font-size: 14.5px;
+  font-weight: 500;
+
+  padding-bottom: 6px;
+
+  text-decoration: none;
+
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #ff2d60;
+}
+
+.nav-links a.active {
+  color: #0d152c;
+  font-weight: 700;
+}
+
+.nav-links a.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: #ff2d60;
+
+  border-radius: 2px;
+}
+
+/* =========================================
+   BOTÓN USUARIO
+   ========================================= */
+
+.userButton {
+  width: 34px;
+  height: 34px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #101629;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.userButton:hover {
+  transform: translateY(-2px);
+  background: #ff3268;
+}
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.tournamentsHero {
+  min-height: 330px;
+
+  background:
+    radial-gradient(
+      circle at 10% 40%,
+      rgba(255, 47, 104, 0.10),
+      transparent 35%
+    ),
+    linear-gradient(
+      120deg,
+      #fff8fa 0%,
+      #ffffff 55%,
+      #ffffff 100%
+    );
+
+  display: flex;
+  align-items: center;
+}
+
+.heroContent {
+  max-width: 1180px;
+  width: 100%;
+
+  margin: 0 auto;
+
+  padding: 55px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heroText {
+  max-width: 620px;
+}
+
+.eyebrow {
+  display: inline-block;
+
+  color: #ff3268;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  margin-bottom: 14px;
+}
+
+.heroText h1 {
+  margin: 0;
+
+  color: #101326;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(42px, 5vw, 62px);
+
+  line-height: 0.98;
+
+  letter-spacing: -2px;
+}
+
+.heroText h1 span {
+  color: #ff3268;
+}
+
+.heroText p {
+  max-width: 530px;
+
+  margin-top: 22px;
+
+  color: #6f7382;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   DECORACIÓN DEL HERO
+   ========================================= */
+
+.heroDecoration {
+  width: 300px;
+  height: 220px;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sportCircle {
+  width: 190px;
+  height: 190px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ff3268,
+      #ff648b
+    );
+
+  box-shadow:
+    0 25px 45px rgba(255, 47, 104, 0.22);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 80px;
+
+  transform: rotate(-8deg);
+}
+
+.smallCircle {
+  position: absolute;
+
+  width: 15px;
+  height: 15px;
+
+  border-radius: 50%;
+
+  background: #ff3268;
+}
+
+.circleOne {
+  top: 20px;
+  right: 30px;
+}
+
+.circleTwo {
+  bottom: 30px;
+  left: 25px;
+
+  background: #101629;
+}
+
+.circleThree {
+  top: 75px;
+  left: 5px;
+
+  width: 8px;
+  height: 8px;
+
+  background: #ffb0c4;
+}
+
+/* =========================================
+   SECCIÓN DE TORNEOS
+   ========================================= */
+
+.tournamentsSection {
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding: 60px 40px 90px;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.sectionEyebrow {
+  display: inline-block;
+
+  color: #ff3268;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  margin-bottom: 10px;
+}
+
+.sectionHeader h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 38px;
+
+  letter-spacing: -1px;
+
+  color: #101326;
+}
+
+.sectionHeader p {
+  color: #777b89;
+
+  font-size: 14px;
+
+  max-width: 600px;
+
+  line-height: 1.6;
+
+  margin-top: 10px;
+}
+
+/* =========================================
+   TABS
+   ========================================= */
+
+.tabs {
+  margin-top: 32px;
+
+  display: flex;
+
+  gap: 8px;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.tabBtn {
+  border: none;
+
+  background: transparent;
+
+  color: #777b89;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  padding: 13px 20px;
+
+  cursor: pointer;
+
+  position: relative;
+
+  transition: color 0.2s ease;
+}
+
+.tabBtn:hover {
+  color: #ff3268;
+}
+
+.tabBtn.activeTab {
+  color: #ff3268;
+}
+
+.tabBtn.activeTab::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -1px;
+
+  left: 15px;
+  right: 15px;
+
+  height: 3px;
+
+  background: #ff3268;
+
+  border-radius: 5px 5px 0 0;
+}
+
+/* =========================================
+   GRID DE TORNEOS
+   ========================================= */
+
+.tournamentsGrid {
+  margin-top: 35px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 25px;
+}
+
+/* =========================================
+   CARD
+   ========================================= */
+
+.tournamentCard {
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 35px rgba(17, 20, 38, 0.07);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.tournamentCard:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 20px 45px rgba(17, 20, 38, 0.12);
+}
+
+/* =========================================
+   IMAGEN
+   ========================================= */
+
+.imageContainer {
+  height: 220px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #f2f2f2;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.4s ease;
+}
+
+.tournamentCard:hover .cardImage {
+  transform: scale(1.04);
+}
+
+.categoryBadge {
+  position: absolute;
+
+  top: 16px;
+  left: 16px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  color: #ff3268;
+
+  padding: 7px 13px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* =========================================
+   CONTENIDO DE LA CARD
+   ========================================= */
+
+.cardContent {
+  padding: 24px;
+}
+
+.cardContent h3 {
+  margin: 0 0 18px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 23px;
+
+  line-height: 1.15;
+
+  color: #111426;
+}
+
+.cardDetail {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #727685;
+
+  font-size: 13px;
+
+  margin-top: 10px;
+}
+
+.detailIcon {
+  width: 28px;
+  height: 28px;
+
+  border-radius: 8px;
+
+  background: #fff0f4;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 13px;
+}
+
+/* =========================================
+   BOTÓN VER DETALLES
+   ========================================= */
+
+.detailsButton {
+  margin-top: 22px;
+
+  width: 100%;
+
+  padding: 12px 18px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #ff3268;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.detailsButton:hover {
+  background: #e92559;
+
+  color: #ffffff;
+
+  text-decoration: none;
+}
+
+.detailsButton span {
+  text-decoration: none;
+}
+
+.detailsButton span:last-child {
+  font-size: 18px;
+  text-decoration: none;
+}
+/* =========================================
+   ESTADO VACÍO
+   ========================================= */
+
+.emptyState {
+  margin-top: 35px;
+
+  min-height: 280px;
+
+  border: 1px dashed #dddddd;
+
+  border-radius: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.emptyIcon {
+  width: 65px;
+  height: 65px;
+
+  border-radius: 50%;
+
+  background: #fff0f4;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;
+
+  margin-bottom: 15px;
+}
+
+.emptyState h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 23px;
+}
+
+.emptyState p {
+  color: #777b89;
+
+  font-size: 14px;
+}
+
+/* =========================================
+   RESPONSIVE - TABLET
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+  .headerContent {
+    padding: 0 20px;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  .heroDecoration {
+    width: 240px;
+  }
+
+  .sportCircle {
+    width: 160px;
+    height: 160px;
+    font-size: 65px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .header {
+    height: auto;
+  }
+
+  .headerContent {
+    padding: 15px 20px;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+  }
+
+  .logo {
+    min-width: auto;
+  }
+
+  .nav-links {
+    order: 3;
+
+    width: 100%;
+
+    justify-content: center;
+
+    overflow-x: auto;
+
+    gap: 20px;
+
+    padding-bottom: 5px;
+  }
+
+  .nav-links a {
+    height: 40px;
+
+    white-space: nowrap;
+
+    font-size: 12px;
+  }
+
+  .nav-links a.active::after {
+    bottom: 0;
+  }
+
+  .heroContent {
+    padding: 50px 25px;
+
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .heroText p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heroDecoration {
+    margin-top: 30px;
+  }
+
+  .tournamentsSection {
+    padding: 45px 20px 70px;
+  }
+
+  .sectionHeader h2 {
+    font-size: 32px;
+  }
+
+  .tournamentsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - CELULAR PEQUEÑO
+   ========================================= */
+
+@media (max-width: 450px) {
+
+  .headerContent {
+    padding: 14px 15px;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+
+    overflow-x: auto;
+  }
+
+  .heroText h1 {
+    font-size: 40px;
+  }
+
+  .tabs {
+    overflow-x: auto;
+  }
+
+  .tabBtn {
+    white-space: nowrap;
+  }
+
+  .imageContainer {
+    height: 190px;
+  }
+
+  .cardContent {
+    padding: 20px;
+  }
+}
